@@ -5,7 +5,6 @@ import cv2
 from sklearn import model_selection
 import scipy.io
 
-
 def preprocess_file_name(file_path):
     split_by_path = file_path.split('/')
     preprocessed_file_name = "_".join(split_by_path[-4:-1])
