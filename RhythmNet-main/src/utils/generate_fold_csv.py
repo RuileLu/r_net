@@ -108,6 +108,15 @@ def make_csv_with_frame_rate():
 
 if __name__ == '__main__':
     fold_data_dict = {}
+    video_path=glob.glob("/content/r_net/RhymeNet-main/Data/file_cropped")
+    for path in video_path:
+        name=path.split('/')[-1]
+        filename=name+'.mp4'
+        v = VideoReader(filename);
+        vid_frames = read(v);  %read all frames
+        clear v   #release it
+        filename=name+'.mat'
+        save(filename, vid_frames);  
     fold_files = glob.glob("/Volumes/Backup Plus/vision/VIPL-HR/fold/*.mat")
     for fold in fold_files:
         name = fold.split('/')[-1].split('.')[0]
