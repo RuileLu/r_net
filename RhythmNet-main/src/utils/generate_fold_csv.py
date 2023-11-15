@@ -108,7 +108,7 @@ def make_csv_with_frame_rate():
 
 if __name__ == '__main__':
     fold_data_dict = {}
-    video_path=glob.glob("/content/r_net/RhymeNet-main/Data/file_cropped")
+    video_path=glob.glob("/content/r_net/RhythmNet-main/Data/file_cropped")
     for path in video_path:
         name=path.split('/')[-1]
         filename=name+'.mp4'
@@ -117,7 +117,7 @@ if __name__ == '__main__':
         clear v   #release it
         filename=name+'.mat'
         save(filename, vid_frames);  
-    fold_files = glob.glob("/Volumes/Backup Plus/vision/VIPL-HR/fold/*.mat")
+    fold_files = glob.glob("/content/r_net/RhythmNet-main/Data/file_cropped/*.mat")
     for fold in fold_files:
         name = fold.split('/')[-1].split('.')[0]
         fold_data = scipy.io.loadmat(fold)
